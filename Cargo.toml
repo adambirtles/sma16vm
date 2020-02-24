@@ -1,0 +1,15 @@
+[package]
+name = "sma16vm"
+version = "0.1.0"
+authors = ["Adam Birtles <adam@adambirtles.com>"]
+edition = "2018"
+
+[lib]
+name = "sma16vm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "sma16run"
+path = "src/main.rs"
+
+[dependencies]

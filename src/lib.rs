@@ -22,8 +22,8 @@ fn small_to_chars(small: u16) -> [Option<u8>; 2] {
         }
     }
 
-    let latter = (small >> 6) & 0x3F;
-    let former = small & 0x3F;
+    let former = (small >> 6) & 0x3F;
+    let latter = small & 0x3F;
     [convert(former as u8), convert(latter as u8)]
 }
 
@@ -110,7 +110,8 @@ impl IndexMut<u16> for Memory {
 
 impl fmt::Debug for Memory {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        unimplemented!();
+        // TODO: figure out better output for memory
+        write!(f, "Memory({} bytes)", MEM_MAX)
     }
 }
 
